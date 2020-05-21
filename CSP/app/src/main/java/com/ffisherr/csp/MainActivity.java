@@ -30,35 +30,28 @@ public class MainActivity extends AppCompatActivity {
         int myId = sp.getInt(Confnig.PREFERENCE_ID,-1);
         if (myId != -1) {
             Toast.makeText(this, "Known user", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "Unknown user", Toast.LENGTH_LONG).show();
+            finish();
         }
         Controller controller = new Controller();
         controller.start(0);
 
         Button In = findViewById(R.id.AutoButton);
-        In.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(MainActivity.this, Enter.class);
-                    startActivity(intent);finish();
-                }catch (Exception e){
-                    Log.e("Start enter activity", e.toString());
-                }
+        In.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, Enter.class);
+                startActivity(intent);finish();
+            }catch (Exception e){
+                Log.e("Start enter activity", e.toString());
             }
         });
 
         Button Reg = (Button)findViewById(R.id.RegistrButton);
-        Reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent1 = new Intent(MainActivity.this, Registr.class);
-                    startActivity(intent1);finish();
-                }catch (Exception e){
-                    Log.e("Start register activity", e.toString());
-                }
+        Reg.setOnClickListener(v -> {
+            try {
+                Intent intent1 = new Intent(MainActivity.this, Registr.class);
+                startActivity(intent1);finish();
+            }catch (Exception e){
+                Log.e("Start register activity", e.toString());
             }
         });
 
