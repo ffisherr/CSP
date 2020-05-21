@@ -2,6 +2,7 @@ package com.ffisherr.csp.retrofit.controllers;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -46,14 +47,37 @@ public class FindUserController  implements Callback<User> {
         if(response.isSuccessful()) {
             User userA = response.body();
             System.out.println(userA);
-            if (userA.getRoleId() == 1) {
-                Log.i("FindUSerController", "Вошли");
-                Intent intent = new Intent(mainContext, TechUserActivity.class);
-                mainContext.startActivity(intent);
-            } else {
-                Toast.makeText(mainContext, "Unknown user", Toast.LENGTH_LONG).show();
+            System.out.println(userA.getId());
+            SharedPreferences sharedPreferences = mainContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt(PREFERENCE_ID,      userA.getId());
+            editor.putInt(PREFERENCE_ROLE_ID, userA.getRoleId());
+            editor.putString(PREFERENCE_FIRST_NAME, userA.getFirstName());
+            editor.putString(PREFERENCE_SUR_NAME, userA.getSurName());
+            editor.putString(PREFERENCE_SECOND_NAME, userA.getSecondName());
+            editor.commit();
+            switch (userA.getRoleId()) {
+                case 0:
+                    System.out.println("Usual user");
+                    break;
+                case 1:
+                    System.out.println("Tech support");
+                    FindJobForTechController jobController = new FindJobForTechController();
+                    jobController.start(mainContext, userA.getId());
+                    break;
+                case 2:
+                    System.out.println("Chief user");
+                    break;
+                case 3:
+                    System.out.println("Tech TeamLead");
+                    break;
+                default:
+                    System.out.println("Unknown role");
+                    break;
             }
         } else {
+            Toast.makeText(mainContext, "Произошла ошибка при получении данных от сервера",
+                    Toast.LENGTH_LONG).show();
             System.out.println(response.errorBody());
         }
     }

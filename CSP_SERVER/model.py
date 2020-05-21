@@ -3,7 +3,7 @@ import json
 
 class User():
 	def __init__(self, arg):
-		self.id, self.roleId, self.CompanyName, \
+		self.id, self.roleId, self.CompanyName, self.ChiefId, \
 		self.firstName, self.surName, self.secondName, \
 		 self.birthDate, self.endOfContract, self.email, \
 		 self.password = arg
@@ -11,6 +11,7 @@ class User():
 	def getFullInfo(self):
 		info = {'id': str(self.id), 
 				'CompanyName': self.CompanyName,
+				'ChiefId': self.ChiefId,
 				'password': self.password,
 				'roleId': str(self.roleId),
 				'firstName': self.firstName,
@@ -27,6 +28,7 @@ class User():
 		result.append(self.id)
 		result.append(self.roleId)
 		result.append(self.CompanyName)
+		result.append(self.ChiefId)
 		result.append(self.firstName)
 		result.append(self.surName)
 		result.append(self.secondName)
@@ -34,6 +36,36 @@ class User():
 		result.append(self.endOfContract)
 		result.append(self.email)
 		result.append(self.password)
+		return result
+
+
+class Application():
+	def __init__(self, arg):
+		self.id, self.whenCreated, self.whenClosed, self.Status, \
+		self.equipmentId, self.userCreatorId, self.userSolverId, \
+		 self.phoneNumber = arg
+
+	def getFullInfo(self):
+		info = {'id': str(self.id), 
+				'whenCreated': self.whenCreated,
+				'whenClosed': self.whenClosed,
+				'Status': self.Status,
+				'equipmentId': str(self.equipmentId),
+				'userCreatorId': self.userCreatorId,
+				'userSolverId': self.userSolverId,
+				'phoneNumber': self.phoneNumber}
+		return info
+
+	def addToDB(self):
+		result = []
+		result.append(self.id)
+		result.append(self.whenCreated)
+		result.append(self.whenClosed)
+		result.append(self.Status)
+		result.append(self.equipmentId)
+		result.append(self.userCreatorId)
+		result.append(self.userSolverId)
+		result.append(self.phoneNumber)
 		return result
 
 
