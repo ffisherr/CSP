@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,15 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button In = (Button)findViewById(R.id.AutoButton);
+        Button In = findViewById(R.id.AutoButton);
         In.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(MainActivity.this,Enter.class);
+                    Intent intent = new Intent(MainActivity.this, Enter.class);
                     startActivity(intent);finish();
                 }catch (Exception e){
-
+                    Log.e("Start enter activity", e.toString());
                 }
             }
         });
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent1 = new Intent(MainActivity.this, Registr.class);
                     startActivity(intent1);finish();
                 }catch (Exception e){
-
+                    Log.e("Start register activity", e.toString());
                 }
             }
         });
