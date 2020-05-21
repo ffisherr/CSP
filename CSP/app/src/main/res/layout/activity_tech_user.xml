@@ -23,6 +23,17 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Номер заявки:" />
+
+            <TextView
+                android:id="@+id/numbeDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
                 android:id="@+id/DateDocument"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
