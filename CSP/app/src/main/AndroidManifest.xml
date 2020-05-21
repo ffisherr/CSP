@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TechUserActivity"></activity>
+        <activity android:name=".BosTech"></activity>
+        <activity android:name=".TechUserActivity" />
         <activity android:name=".UserScreenActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
