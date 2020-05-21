@@ -86,13 +86,16 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Start register activity", e.toString());
             }
         });
-        Button Reg1 = (Button)findViewById(R.id.RegistrButton);
-        Reg.setOnClickListener(v -> {
-            try {
-                Intent intent1 = new Intent(MainActivity.this, UserScreenActivity.class);
-                startActivity(intent1);finish();
-            }catch (Exception e){
-                Log.e("Start register activity", e.toString());
+        Button Reg1 = (Button)findViewById(R.id.ButtonUserScreen);
+        Reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent1 = new Intent(MainActivity.this, UserScreenActivity.class);
+                    startActivity(intent1);finish();
+                }catch (Exception e){
+                    Log.e("Start userscreen activity", e.toString());
+                }
             }
         });
 
