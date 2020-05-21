@@ -1,5 +1,6 @@
-package com.ffisherr.csp.retrofit;
+package com.ffisherr.csp.retrofit.controllers;
 
+import com.ffisherr.csp.retrofit.ServerApi;
 import com.ffisherr.csp.users.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,9 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.ffisherr.csp.Confnig.*;
 
-public class Controller  implements Callback<User> {
+public class FindUserController  implements Callback<User> {
 
-    public void start(int id) {
+    public void start(String login, String password) {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -23,8 +24,7 @@ public class Controller  implements Callback<User> {
 
         ServerApi serverApi = retrofit.create(ServerApi.class);
 
-        //String call = serverApi.authUser(0);
-        Call<User> call = serverApi.authUser(id);
+        Call<User> call = serverApi.loginUser(login, password);
         call.enqueue(this);
 
     }
