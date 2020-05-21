@@ -1,5 +1,10 @@
 package com.ffisherr.csp.retrofit.controllers;
 
+import android.content.Context;
+import android.content.Intent;
+import android.widget.Toast;
+
+import com.ffisherr.csp.TechUserActivity;
 import com.ffisherr.csp.retrofit.ServerApi;
 import com.ffisherr.csp.users.User;
 import com.google.gson.Gson;
@@ -15,7 +20,11 @@ import static com.ffisherr.csp.Confnig.*;
 
 public class FindUserController  implements Callback<User> {
 
-    public void start(String login, String password) {
+    private Context mainContext;
+
+    public void start(Context context, String login, String password) {
+        mainContext = context;
+
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -34,6 +43,12 @@ public class FindUserController  implements Callback<User> {
         if(response.isSuccessful()) {
             User userA = response.body();
             System.out.println(userA);
+            if (userA.getRoleId() == 1) {
+                Intent intent = new Intent(mainContext, TechUserActivity.class);
+                mainContext.startActivity(intent);
+            } else {
+                Toast.makeText(mainContext, "Unknown user", Toast.LENGTH_LONG).show();
+            }
         } else {
             System.out.println(response.errorBody());
         }

@@ -15,4 +15,6 @@ public interface ServerApi {
     @GET("auth/user/{login}/passw/{passw}")
     Call<User> loginUser(@Path("login") String login, @Path("passw") String password);
 
+
+
 }
