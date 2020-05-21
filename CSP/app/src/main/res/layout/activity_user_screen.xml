@@ -59,7 +59,7 @@
                 android:id="@+id/OtdelNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Введите номер или название отдела отдела:" />
+                android:text="Введите номер или название отдела:" />
 
             <EditText
                 android:id="@+id/editText3"
