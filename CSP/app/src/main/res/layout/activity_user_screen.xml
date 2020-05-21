@@ -1,9 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UserScreenActivity">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_vertical"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/Passw0rd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Выберите оборудование:" />
+
+            <Spinner
+                android:id="@+id/Corporation1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/DateContractText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Дата окончания вашего контракта:" />
+
+            <TextView
+                android:id="@+id/DateEndContract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/Dolzh1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Должность:" />
+
+            <TextView
+                android:id="@+id/Dolzh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/OtdelNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Введите номер или название отдела отдела:" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/SurName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/surname_text" />
+
+            <TextView
+                android:id="@+id/Third_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/FirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/firstName_text" />
+
+            <TextView
+                android:id="@+id/First_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/SecondName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/secondName_text" />
+
+            <TextView
+                android:id="@+id/Second_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ваш E-Mail:" />
+
+            <TextView
+                android:id="@+id/E_Mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Введите номер телефона:" />
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/info" />
+
+            <Button
+                android:id="@+id/RegDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickRegister"
+                android:text="Подать заявку" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
