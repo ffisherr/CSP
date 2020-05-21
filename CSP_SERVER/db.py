@@ -27,7 +27,11 @@ def insertIntoTable(cursor, table, values):
 
 
 def fillWithTestData(cursor):
-	insertIntoTable(cursor, 'roles', ['0', 'admin'])
+	cursor.execute('insert into users values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', ('0', '0', 'RT', 'Андрей',  'Попов', 'Николаевич',  '1997-03-10', '2021-03-10', 'a@2.ru', '123'))
+	cursor.execute('insert into users values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', ('1', '1', 'RT', 'Иван',    'Попов', 'Николаевич',  '1998-03-10', '2022-03-10', 'a@3.ru', '124'))
+	cursor.execute('insert into users values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', ('2', '2', 'RT', 'Дмитрий', 'Попов', 'Николаевич',  '1999-03-10', '2023-03-10', 'a@4.ru', '125'))
+
+"""	insertIntoTable(cursor, 'roles', ['0', 'admin'])
 	insertIntoTable(cursor, 'roles', ['1', 'student'])
 	insertIntoTable(cursor, 'roles', ['2', 'unknownUser'])
 
@@ -49,32 +53,30 @@ def fillWithTestData(cursor):
 	'Иванович', 'ivanStudent', '123'])
 	insertIntoTable(cursor, 'users', [ '2', '1', '0', 'Петр', 'Петров',
 	'Петрович', 'petrStudent', '123'])
-"""
+
 	insertIntoTable(cursor, 'messages', ['0', 'TestText0', '2020-01-11 10:00', '1'])
 	insertIntoTable(cursor, 'messages', ['1', 'TestText1', '2020-01-11 10:01', '2'])
-	insertIntoTable(cursor, 'messages', ['2', 'TestText2', '2020-01-11 10:02', '0'])"""
-
+	insertIntoTable(cursor, 'messages', ['2', 'TestText2', '2020-01-11 10:02', '0'])
+"""
 
 
 
 def dropTables(cursor):
 	dropTable(cursor, 'users')
-	dropTable(cursor, 'roles')
-	dropTable(cursor, 'calendar')
-	dropTable(cursor, 'messages')
-	dropTable(cursor, 'universities')
+	#dropTable(cursor, 'roles')
+	#dropTable(cursor, 'calendar')
+	#dropTable(cursor, 'messages')
+	#dropTable(cursor, 'universities')
 
 
 def createTables(cursor):
-	createTable(cursor, 'users', 'id int NOT NULL UNIQUE, role_id int, university_id int,\
-		FirstName text, SurName text, SecondName text,login text NOT NULL UNIQUE,\
-		passw_hash text')
-	createTable(cursor, 'roles', 'id int NOT NULL UNIQUE, role text')
-	createTable(cursor, 'calendar', 'id int NOT NULL UNIQUE, title text, dt datetime, \
-		about text, tags json1')
-	createTable(cursor, 'messages', 'id int NOT NULL UNIQUE, message_text text, dt datetime,\
-		sender_id int, sender_login text')
-	createTable(cursor, 'universities', 'id int not NULL UNIQUE, name text')
+	createTable(cursor, 'users', 'id int NOT NULL UNIQUE, roleId int, CompanyName text, firstName text, surName text, secondName text, birthDate date, endOfContract date, email text NOT NULL UNIQUE, password text')
+	#createTable(cursor, 'roles', 'id int NOT NULL UNIQUE, role text')
+	#createTable(cursor, 'calendar', 'id int NOT NULL UNIQUE, title text, dt datetime, \
+	#	about text, tags json1')
+	#createTable(cursor, 'messages', 'id int NOT NULL UNIQUE, message_text text, dt datetime,\
+	#	sender_id int, sender_login text')
+	#createTable(cursor, 'universities', 'id int not NULL UNIQUE, name text')
 	fillWithTestData(cursor)
 
 

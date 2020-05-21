@@ -27,6 +27,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Unknown user", Toast.LENGTH_LONG).show();
         }
         Controller controller = new Controller();
-        controller.start();
+        controller.start(0);
     }
 }

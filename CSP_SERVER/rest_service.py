@@ -12,13 +12,16 @@ api = Api(app)
 
 
 class UserById(Resource):
-	def get(self):
-		print('OKKKK')
-		return "1"
+	def get(self, user_id):
+		conn = sqlite3.connect('lbg.db')
+		cursor = conn.cursor()
+		user = cursor.execute('select * from users where id=%s'%int(user_id))
+		for u in user:
+			result = User(u)
+		return jsonify(result.getFullInfo())
 
 
-
-api.add_resource(UserById, '/auth/id/')
+api.add_resource(UserById, '/auth/id/<user_id>')
 
 
 

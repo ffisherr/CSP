@@ -3,32 +3,37 @@ import json
 
 class User():
 	def __init__(self, arg):
-		self.id, self.role_id, self.university_id, \
-		self.FirstName, self.SurName, self.SecondName, \
-		 self.login, self.passw_hash = arg
+		self.id, self.roleId, self.CompanyName, \
+		self.firstName, self.surName, self.secondName, \
+		 self.birthDate, self.endOfContract, self.email, \
+		 self.password = arg
 
 	def getFullInfo(self):
 		info = {'id': str(self.id), 
-				'login': self.login,
-				'passw_hash': self.passw_hash,
-				'role_id': str(self.role_id),
-				'university_id': self.university_id,
-				'FirstName': self.FirstName,
-				'SurName': self.SurName,
-				'SecondName': self.SecondName,
-				'status': 'success'}
+				'CompanyName': self.CompanyName,
+				'password': self.password,
+				'roleId': str(self.roleId),
+				'firstName': self.firstName,
+				'surName': self.surName,
+				'secondName': self.secondName,
+				'birthDate': self.birthDate,
+				'endOfContract': self.endOfContract,
+				'password': self.password,
+				'email': self.email}
 		return info
 
 	def addToDB(self):
 		result = []
 		result.append(self.id)
-		result.append(self.role_id)
-		result.append(self.university_id)
-		result.append(self.FirstName)
-		result.append(self.SurName)
-		result.append(self.SecondName)
-		result.append(self.login)
-		result.append(self.passw_hash)
+		result.append(self.roleId)
+		result.append(self.CompanyName)
+		result.append(self.firstName)
+		result.append(self.surName)
+		result.append(self.secondName)
+		result.append(self.birthDate)
+		result.append(self.endOfContract)
+		result.append(self.email)
+		result.append(self.password)
 		return result
 
 

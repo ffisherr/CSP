@@ -2,9 +2,10 @@ package com.ffisherr.csp.users;
 
 import java.util.Date;
 
-public abstract class User {
-    private Integer roleId;	// Роль
+public class User {
     private Integer Id;	//
+    private Integer roleId;	// Роль
+    private String  passsword;
     private String  CompanyName;
     private String  firstName;  // Имя
     private String  surName;    // Фамилия
@@ -84,4 +85,18 @@ public abstract class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getPasssword() {
+        return passsword;
+    }
+
+    public void setPasssword(String passsword) {
+        this.passsword = passsword;
+    }
+
+    public String toString() {
+        String s = firstName+" "+secondName+" "+surName;
+        return s;
+    }
+
 }
