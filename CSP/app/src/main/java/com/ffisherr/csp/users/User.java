@@ -3,10 +3,11 @@ package com.ffisherr.csp.users;
 import java.util.Date;
 
 public class User {
-    private Integer Id;	//
+    private Integer id;	//
     private Integer roleId;	// Роль
     private String  passsword;
     private String  CompanyName;
+    private Integer ChiefId;
     private String  firstName;  // Имя
     private String  surName;    // Фамилия
     private String  secondName; // Отчество
@@ -23,11 +24,11 @@ public class User {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getCompanyName() {
@@ -92,6 +93,15 @@ public class User {
 
     public void setPasssword(String passsword) {
         this.passsword = passsword;
+    }
+
+
+    public Integer getChiefId() {
+        return ChiefId;
+    }
+
+    public void setChiefId(Integer chiefId) {
+        ChiefId = chiefId;
     }
 
     public String toString() {

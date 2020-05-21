@@ -21,127 +21,70 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Номер заявки:" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Номер заявки:" />
+                <TextView
+                    android:id="@+id/numbeDoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+                <TextView
+                    android:id="@+id/DateDocument"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Дата подачи заявки:" />
 
-            <TextView
-                android:id="@+id/numbeDoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/dateDoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <TextView
-                android:id="@+id/DateDocument"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Дата подачи заявки:" />
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пользователь:" />
 
-            <TextView
-                android:id="@+id/dateDoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/creatorIdTextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/textView010"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Оборудование:" />
 
-            <TextView
-                android:id="@+id/Corporation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Коропорация:" />
+                <Button
+                    android:id="@+id/equipmentIdTextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Статус" />
 
-            <TextView
-                android:id="@+id/nameCorp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/nameStatusDoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Отдел" />
 
-            <TextView
-                android:id="@+id/nameOtdel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Номер телефона:" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Должность:" />
-
-            <TextView
-                android:id="@+id/nameDolzh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Квалидация" />
-
-            <TextView
-                android:id="@+id/nameStatusDoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/SurName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/surname_text" />
-
-            <TextView
-                android:id="@+id/thirdName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/FirstName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/firstName_text" />
-
-            <TextView
-                android:id="@+id/firstName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/SecondName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/secondName_text" />
-
-            <TextView
-                android:id="@+id/secondName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/Male"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="E-Mail:" />
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Номер телефона:" />
-
-            <TextView
-                android:id="@+id/PhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/PhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="wrap_content"
