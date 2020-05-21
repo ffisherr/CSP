@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/ChatText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="110dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Сообщение"
+        android:inputType="textShortMessage|textLongMessage|textAutoCorrect|textPersonName" />
+
+    <Button
+        android:id="@+id/Go_TO_UserScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Оформить заявку" />
+
+    <Button
+        android:id="@+id/ChatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="310dp"
+        android:layout_marginBottom="20dp"
+        android:minWidth="100dip"
+        android:text="Оправить" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

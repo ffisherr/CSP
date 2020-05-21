@@ -3,15 +3,20 @@
     package="com.ffisherr.csp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".BosTech"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".UserScreenMenuActivity"></activity>
+        <activity android:name=".UserScreenMainActvivty" />
+        <activity android:name=".users.UserScreenMainActivity" />
+        <activity android:name=".users.UserScreenAfterInActivity" />
+        <activity android:name=".BosTech" />
         <activity android:name=".TechUserActivity" />
         <activity android:name=".UserScreenActivity" />
         <activity android:name=".MainActivity">
