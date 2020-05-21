@@ -74,13 +74,13 @@
         />
 
     <Button
-        android:id="@+id/button_Login"
+        android:id="@+id/Enter_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/attempts"
         android:layout_marginTop="96dp"
         android:onClick="onClickLogin"
-        android:text="@string/In" />
+        android:text="@string/Enter" />
 
     <TextView
         android:id="@+id/login_locked"
