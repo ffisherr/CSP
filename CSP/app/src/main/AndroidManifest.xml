@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UserScreenMenuActivity"></activity>
+        <activity android:name=".UserBosActvivty"></activity>
+        <activity android:name=".UserBos" />
+        <activity android:name=".UserScreenMenuActivity" />
         <activity android:name=".UserScreenMainActvivty" />
         <activity android:name=".users.UserScreenMainActivity" />
         <activity android:name=".users.UserScreenAfterInActivity" />

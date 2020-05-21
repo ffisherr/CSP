@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent1 = new Intent(MainActivity.this, UserScreenActivity.class);
+                    Intent intent1 = new Intent(MainActivity.this, UserScreenMenuActivity.class);
                     startActivity(intent1);finish();
                 }catch (Exception e){
                     Log.e("Start userscreen activity", e.toString());

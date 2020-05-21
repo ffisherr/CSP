@@ -34,6 +34,13 @@
         android:layout_height="wrap_content"
         android:text="Оформить заявку" />
 
+    <Button
+        android:id="@+id/RassmotrDoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Просмотр заявок" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -41,7 +48,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:orientation="vertical">
 
             <ListView
