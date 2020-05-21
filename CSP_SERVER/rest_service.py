@@ -20,8 +20,23 @@ class UserById(Resource):
 			result = User(u)
 		return jsonify(result.getFullInfo())
 
+class UserByLoginPassword(Resource):
+	def post(self):
+		conn = sqlite3.connect('lbg.db')
+		cursor = conn.cursor()
+		login = request.json['login']
+		passw = request.json['passw']
+		print(login)
+		print(passw)
+		user = cursor.execute('''select * from users where email="%s" and password="%s"'''
+			% (login, passw))
+		for u in user:
+			result = User(u)
+		return jsonify(result.getFullInfo())
+
 
 api.add_resource(UserById, '/auth/id/<user_id>')
+api.add_resource(UserByLoginPassword, '/auth/user/')
 
 
 
