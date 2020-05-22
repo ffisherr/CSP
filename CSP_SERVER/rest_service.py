@@ -87,10 +87,23 @@ class JobForTech(Resource):
 		return jsonify(result.getFullInfo())
 
 
+class FindTechUsers(Resource):
+	def get(self):
+		conn = sqlite3.connect('lbg.db')
+		cursor = conn.cursor()
+		appl = cursor.execute('''select * from users where roleId="1"''')
+		result = []
+		for u in appl:
+			result.append((User(u).getFullInfo()))
+		print(result)
+		return jsonify(result)
+
+
 api.add_resource(UserById, '/auth/id/<user_id>')
 api.add_resource(UserByLoginPassword, '/auth/user/')
 api.add_resource(RegisterUser, '/auth/register/')
 api.add_resource(JobForTech, '/techno/id/<tech_id>')
+api.add_resource(FindTechUsers, '/techno/users/')
 
 
 if __name__ == '__main__':

@@ -5,6 +5,8 @@ import com.ffisherr.csp.retrofit.body.RegisterBody;
 import com.ffisherr.csp.techno.ApplicationForm;
 import com.ffisherr.csp.users.User;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -25,5 +27,8 @@ public interface ServerApi {
 
     @GET("techno/id/{id}")
     Call<ApplicationForm> getJobForTech(@Path("id") int id);
+
+    @GET("techno/users/")
+    Call<List<User>> getTechUsers();
 
 }
