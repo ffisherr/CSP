@@ -39,6 +39,7 @@ public class FindUserController  implements Callback<User> {
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create(gson)).build();
 
         ServerApi serverApi = retrofit.create(ServerApi.class);
+        // TODO удалить
         Log.i("FindUSerController", "Cjplftv");
         AutorisationBody body = new AutorisationBody(login, password);
         Call<User> call = serverApi.loginUser(body);

@@ -39,7 +39,7 @@ public class Enter extends AppCompatActivity {
                 user.setPasssword(uPassword);
                 FindUserController controller = new FindUserController();
                 controller.start(this, uLogin, uPassword);
-                //finish();
+                finish();
             }catch (Exception e){
                 Log.e("Start register activity", e.toString());
             }
