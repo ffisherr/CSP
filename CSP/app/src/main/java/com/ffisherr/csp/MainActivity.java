@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sp = getSharedPreferences(Confnig.PREFERENCE_NAME, Context.MODE_PRIVATE);
-
+/*
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt(PREFERENCE_ID,      -1);
         editor.putInt(PREFERENCE_ROLE_ID, -1);
-        editor.commit();
+        editor.commit();*/
 
 
         int myId = sp.getInt(Confnig.PREFERENCE_ID,-1);
@@ -47,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Known user", Toast.LENGTH_LONG).show();
             switch (myRoleId) {
                 case 0:
-                    System.out.println("Usual user");
+                    System.out.println("Chief user");
+                    Intent intent2 = new Intent(MainActivity.this, UserBosActvivty.class);
+                    startActivity(intent2);
                     break;
                 case 1:
                     System.out.println("Tech support");
@@ -55,12 +57,17 @@ public class MainActivity extends AppCompatActivity {
                     jobController.start(this, myId);
                     break;
                 case 2:
-                    System.out.println("Chief user");
+                    Intent intent = new Intent(MainActivity.this, UserScreenMenuActivity.class);
+                    startActivity(intent);
+                    System.out.println("Usual user");
                     break;
                 case 3:
+                    Intent intent1 = new Intent(MainActivity.this, BosTech.class);
+                    startActivity(intent1);
                     System.out.println("Tech TeamLead");
                     break;
                 default:
+                    Toast.makeText(this, "Неизвестный пользователь", Toast.LENGTH_LONG).show();
                     System.out.println("Unknown role");
                     break;
             }
@@ -87,17 +94,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Start register activity", e.toString());
             }
         });
-        Button Reg1 = (Button)findViewById(R.id.ButtonUserScreen);
-        Reg1.setOnClickListener(v -> {
-            try {
-                Log.e("Start user activity", "");
-                Intent intent1 = new Intent(MainActivity.this, UserScreenMenuActivity.class);
-                startActivity(intent1);finish();
-            }catch (Exception e){
-                Log.e("Start user activity", e.toString());
-            }
-        });
-
-
     }
 }
