@@ -6,7 +6,11 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.ffisherr.csp.BosTech;
+import com.ffisherr.csp.MainActivity;
 import com.ffisherr.csp.TechUserActivity;
+import com.ffisherr.csp.UserBosActvivty;
+import com.ffisherr.csp.UserScreenMenuActivity;
 import com.ffisherr.csp.retrofit.ServerApi;
 import com.ffisherr.csp.retrofit.body.AutorisationBody;
 import com.ffisherr.csp.users.User;
@@ -35,6 +39,7 @@ public class FindUserController  implements Callback<User> {
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create(gson)).build();
 
         ServerApi serverApi = retrofit.create(ServerApi.class);
+        // TODO удалить
         Log.i("FindUSerController", "Cjplftv");
         AutorisationBody body = new AutorisationBody(login, password);
         Call<User> call = serverApi.loginUser(body);
@@ -58,7 +63,9 @@ public class FindUserController  implements Callback<User> {
             editor.commit();
             switch (userA.getRoleId()) {
                 case 0:
-                    System.out.println("Usual user");
+                    System.out.println("Chief user");
+                    Intent intent2 = new Intent(mainContext, UserBosActvivty.class);
+                    mainContext.startActivity(intent2);
                     break;
                 case 1:
                     System.out.println("Tech support");
@@ -66,12 +73,17 @@ public class FindUserController  implements Callback<User> {
                     jobController.start(mainContext, userA.getId());
                     break;
                 case 2:
-                    System.out.println("Chief user");
+                    Intent intent = new Intent(mainContext, UserScreenMenuActivity.class);
+                    mainContext.startActivity(intent);
+                    System.out.println("Usual user");
                     break;
                 case 3:
+                    Intent intent1 = new Intent(mainContext, BosTech.class);
+                    mainContext.startActivity(intent1);
                     System.out.println("Tech TeamLead");
                     break;
                 default:
+                    Toast.makeText(mainContext, "Неизвестный пользователь", Toast.LENGTH_LONG).show();
                     System.out.println("Unknown role");
                     break;
             }

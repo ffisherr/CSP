@@ -23,7 +23,6 @@ public class Controller  implements Callback<User> {
 
         ServerApi serverApi = retrofit.create(ServerApi.class);
 
-        //String call = serverApi.authUser(0);
         Call<User> call = serverApi.authUser(id);
         call.enqueue(this);
 

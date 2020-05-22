@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="дд.мм.гггг"
+                android:hint="гггг-мм-дд"
                 android:inputType="date" />
 
             <TextView
@@ -100,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="дд.мм.гггг"
+                android:hint="гггг-мм-дд"
                 android:inputType="date" />
 
             <TextView
