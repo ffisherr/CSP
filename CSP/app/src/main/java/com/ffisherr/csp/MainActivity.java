@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         sp = getSharedPreferences(Confnig.PREFERENCE_NAME, Context.MODE_PRIVATE);
 
-        /*SharedPreferences.Editor editor = sp.edit();
+        SharedPreferences.Editor editor = sp.edit();
         editor.putInt(PREFERENCE_ID,      -1);
         editor.putInt(PREFERENCE_ROLE_ID, -1);
-        editor.commit();*/
+        editor.commit();
 
 
         int myId = sp.getInt(Confnig.PREFERENCE_ID,-1);
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         Button Reg = (Button)findViewById(R.id.RegistrButton);
         Reg.setOnClickListener(v -> {
             try {
+                Log.e("Start register activity", "");
                 Intent intent1 = new Intent(MainActivity.this, Registr.class);
                 startActivity(intent1);finish();
             }catch (Exception e){
@@ -87,15 +88,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Button Reg1 = (Button)findViewById(R.id.ButtonUserScreen);
-        Reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent1 = new Intent(MainActivity.this, UserScreenMenuActivity.class);
-                    startActivity(intent1);finish();
-                }catch (Exception e){
-                    Log.e("Start userscreen activity", e.toString());
-                }
+        Reg1.setOnClickListener(v -> {
+            try {
+                Log.e("Start user activity", "");
+                Intent intent1 = new Intent(MainActivity.this, UserScreenMenuActivity.class);
+                startActivity(intent1);finish();
+            }catch (Exception e){
+                Log.e("Start user activity", e.toString());
             }
         });
 

@@ -56,6 +56,7 @@ public class TechUserActivity extends AppCompatActivity {
 
 
         textView = findViewById(R.id.nameStatusDoc);
+        System.out.println(form.getStatus());
         switch (form.getStatus()) {
             case 1:
                 charSequence = "Ожидает подтверждения";

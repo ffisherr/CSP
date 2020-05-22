@@ -20,6 +20,7 @@ class UserById(Resource):
 			result = User(u)
 		return jsonify(result.getFullInfo())
 
+
 class UserByLoginPassword(Resource):
 	def post(self):
 		conn = sqlite3.connect('lbg.db')
@@ -31,6 +32,48 @@ class UserByLoginPassword(Resource):
 		for u in user:
 			result = User(u)
 		return jsonify(result.getFullInfo())
+
+
+class RegisterUser(Resource):
+	def post(self):
+		#try:
+		conn       = sqlite3.connect('lbg.db')
+		cursor     = conn.cursor()
+		password    = request.json['password']
+		FirstName     = request.json['firstName']
+		SurName       = request.json['surName']
+		SecondName    = request.json['secondName']
+		email = request.json['email']
+		print('select * from users \
+		where firstName="%s" and secondName="%s" and surName="%s"' %
+		 (FirstName, SurName, SecondName))
+		users = cursor.execute('select * from users \
+		where firstName="%s" and secondName="%s" and surName="%s"' %
+		 (FirstName, SurName, SecondName)).fetchall()
+		print(users)
+		for u in users:
+			result = User(u)
+			print('im geerere')
+			print(result.getFullInfo())
+		if result.id >= 0:
+			result.email = email
+			result.password = password
+			cursor.execute('update users set email="%s", password="%s" \
+				where firstName="%s" and secondName="%s" and surName="%s"' %
+				(email, password, FirstName, SurName, SecondName))
+			conn.commit()
+		print(result.getFullInfo())
+		return jsonify(result.getFullInfo())		
+	"""	except Exception as e:
+			print('here3')
+			print(e)
+			uuarr = []
+			for i in range(11):
+				uuarr.append('')
+			u = User(uuarr)
+			u.id = -1
+			return jsonify(u.getFullInfo())
+"""
 
 class JobForTech(Resource):
 	def get(self, tech_id):
@@ -46,10 +89,8 @@ class JobForTech(Resource):
 
 api.add_resource(UserById, '/auth/id/<user_id>')
 api.add_resource(UserByLoginPassword, '/auth/user/')
+api.add_resource(RegisterUser, '/auth/register/')
 api.add_resource(JobForTech, '/techno/id/<tech_id>')
-
-
-
 
 
 if __name__ == '__main__':

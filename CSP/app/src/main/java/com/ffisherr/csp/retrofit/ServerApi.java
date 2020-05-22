@@ -1,6 +1,7 @@
 package com.ffisherr.csp.retrofit;
 
 import com.ffisherr.csp.retrofit.body.AutorisationBody;
+import com.ffisherr.csp.retrofit.body.RegisterBody;
 import com.ffisherr.csp.techno.ApplicationForm;
 import com.ffisherr.csp.users.User;
 
@@ -17,6 +18,10 @@ public interface ServerApi {
 
     @POST("auth/user/")
     Call<User> loginUser(@Body AutorisationBody body);
+
+    @POST("auth/register/")
+    Call<User> registerUser(@Body RegisterBody u);
+
 
     @GET("techno/id/{id}")
     Call<ApplicationForm> getJobForTech(@Path("id") int id);
